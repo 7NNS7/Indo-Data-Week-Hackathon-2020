@@ -148,4 +148,6 @@ if st.button('Predict'):
     data[['State_Name','District_Name','Season','Crop']]=enc.transform(data[['State_Name','District_Name','Season','Crop']])
     model=joblib.load('yield_predictor.pkl')
     pred=model.predict(data)
-    st.info("Predicted Yield is "+str(pred[0])+" Tonnes")
+    pred=pred[0]
+    pred=max(pred,0)
+    st.info("Predicted Yield is "+str(pred)+" Tonnes")
