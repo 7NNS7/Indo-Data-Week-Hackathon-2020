@@ -94,7 +94,7 @@ if st.sidebar.checkbox('Show Top Producing Districts Cropwise'):
 if st.sidebar.checkbox('Show Top Producing Districts in a State'):
     st.subheader('Top States')
     state_selected=st.sidebar.selectbox('Select State',list(crop['State_Name'].unique()))
-    num=st.sidebar.slider("Number of Districts",5,10)
+    num=st.sidebar.slider("Number of Districts",5,10,key=2)
     fig, ax = plt.subplots()
     fig.set_figheight(10)
     fig.set_figwidth(20)
@@ -108,7 +108,7 @@ if st.sidebar.checkbox('Show Top Producing Districts in a State'):
 if st.sidebar.checkbox('Show Top Producing Districts in a State Cropwise'):
     st.subheader('Top States')
     state_selected=st.sidebar.selectbox('Select State',list(crop['State_Name'].unique()),key=1)
-    num=st.sidebar.slider("Number of Districts",5,10,key=1)
+    num=st.sidebar.slider("Number of Districts",5,10,key=3)
     fig, ax = plt.subplots()
     fig.set_figheight(10)
     fig.set_figwidth(20)
