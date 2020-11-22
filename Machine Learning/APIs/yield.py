@@ -135,7 +135,7 @@ st.write("Please Select the Crop")
 crop_selected=st.selectbox('',list(crop['Crop'].unique()))
 st.text("")
 st.write("Please Enter Field Area in Hecteres")
-area=st.number_input('')
+area=st.number_input('',min_value=min(crop['Area (in Hectares)']))
 st.text("")
 data=[[state,district,season,crop_selected,area]]
 data=pd.DataFrame(data)
